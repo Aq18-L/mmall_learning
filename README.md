@@ -1,1 +1,1 @@
-mmall_learningecho
+mmall_learning
