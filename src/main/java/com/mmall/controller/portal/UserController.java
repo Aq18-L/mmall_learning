@@ -68,6 +68,7 @@ public class UserController {
      * @param type
      * @return
      */
+
     @RequestMapping(value = "check_valid.do", method = RequestMethod.POST)
     @ResponseBody
     public ServerResponse<String> checkValie(String str, String type) {
