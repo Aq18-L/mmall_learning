@@ -37,4 +37,39 @@ public class UserController {
         }
         return response;
     }
+
+    /**
+     * 用户注销登录
+     * @param session
+     * @return
+     */
+    @RequestMapping(value = "logout.do", method = RequestMethod.GET)
+    @ResponseBody
+    public ServerResponse<String> logout(HttpSession session) {
+        session.removeAttribute(Const.CURRENT_USER);
+        return ServerResponse.createBySuccess();
+    }
+
+    /**
+     * 用户注册
+     * @param user
+     * @return
+     */
+    @RequestMapping(value = "register.do", method = RequestMethod.POST)
+    @ResponseBody
+    public ServerResponse<String> register(User user) {
+        return iUserService.register(user);
+    }
+
+    /**
+     * 校验用户名和邮箱
+     * @param str
+     * @param type
+     * @return
+     */
+    @RequestMapping(value = "check_valid.do", method = RequestMethod.GET)
+    @ResponseBody
+    public ServerResponse<String> checkValie(String str, String type) {
+        return iUserService.checkValid(str, type);
+    }
 }
