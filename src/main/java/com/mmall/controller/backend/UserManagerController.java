@@ -15,12 +15,24 @@ import javax.servlet.http.HttpSession;
 /**
  * Created by Actor on 2018/4/3.
  */
+
+/**
+ * 后台用户管理
+ */
 @Controller
 @RequestMapping("/manage/user")
 public class UserManagerController {
 
     @Autowired
     private IUserService iUserService;
+
+    /**
+     * 管理员登录接口
+     * @param username
+     * @param password
+     * @param session
+     * @return
+     */
     @RequestMapping(value = "login.do", method = RequestMethod.POST)
     @ResponseBody
     public ServerResponse<User> login(String username, String password, HttpSession session) {

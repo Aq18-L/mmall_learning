@@ -16,6 +16,10 @@ import javax.servlet.http.HttpSession;
 /**
  * Created by Actor on 2018/3/31.
  */
+
+/**
+ *  前台用户管理
+ */
 @Controller
 @RequestMapping("/user")
 public class UserController {
